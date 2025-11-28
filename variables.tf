@@ -7,7 +7,6 @@ variable "use_existing_dns_zone" {
 variable "dns_zone_name" {
   description = "DNS zone name"
   type        = string
-  default     = ""
 }
 
 variable "project_id" {
