@@ -1,6 +1,6 @@
 output "dns_zone_nameservers" {
   description = "Name servers for the DNS zone (only available if DNS zone is created)"
-  value       = var.use_existing_dns_zone ? null : google_dns_managed_zone.truefoundry_dns_zone[0].name_servers
+  value       = var.use_existing_dns_zone ? data.google_dns_managed_zone.existing_zone[0].name_servers : google_dns_managed_zone.truefoundry_dns_zone[0].name_servers
 }
 
 output "service_account_email" {
