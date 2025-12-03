@@ -25,8 +25,8 @@ resource "google_project_iam_custom_role" "truefoundry_dns_manger_role" {
 
 resource "google_service_account" "truefoundry_dns_service_account" {
   project      = var.project_id
-  account_id   = var.truefoundry_dns_service_account_name_override ? var.truefoundry_dns_service_account_override_name : "${var.cluster_name}-${var.dns_service_account_name}"
-  display_name = var.truefoundry_dns_service_account_name_override ? var.truefoundry_dns_service_account_override_name : "${var.cluster_name}-${var.dns_service_account_name}"
+  account_id   = var.truefoundry_dns_service_account_override_enabled ? var.truefoundry_dns_service_account_override_name : "${var.cluster_name}-${var.dns_service_account_name}"
+  display_name = var.truefoundry_dns_service_account_override_enabled ? var.truefoundry_dns_service_account_override_name : "${var.cluster_name}-${var.dns_service_account_name}"
 }
 
 resource "google_service_account_iam_member" "truefoundry_dns_workload_identity_binding" {

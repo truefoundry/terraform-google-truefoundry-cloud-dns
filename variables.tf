@@ -61,7 +61,7 @@ variable "truefoundry_dns_manger_role_override_name" {
   default     = ""
 }
 
-variable "truefoundry_dns_service_account_name_override" {
+variable "truefoundry_dns_service_account_override_enabled" {
   description = "Enable override for TrueFoundry DNS Service Account name"
   type        = bool
   default     = false
