@@ -2,14 +2,14 @@ resource "google_dns_managed_zone" "truefoundry_dns_zone" {
   count       = var.use_existing_dns_zone ? 0 : 1
   name        = var.dns_zone_name
   dns_name    = var.dns_zone_name
-  description = "Managed DNS zone"
+  description = "${var.cluster_name} DNS zone managed"
 }
 
 resource "google_project_iam_custom_role" "truefoundry_dns_manger_role" {
   project     = var.project_id
   role_id     = var.dns_role_id
   title       = var.truefoundry_dns_manger_role_name_override_enabled ? var.truefoundry_dns_manger_role_override_name : "${var.cluster_name}-${var.dns_role_title}"
-  description = "Custom role for DNS management with cert-manager"
+  description = "${var.cluster_name} custom role for DNS management with cert-manager"
   permissions = [
     "dns.resourceRecordSets.create",
     "dns.resourceRecordSets.delete",
