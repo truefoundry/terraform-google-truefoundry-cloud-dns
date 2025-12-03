@@ -11,7 +11,7 @@ variable "dns_zone_name" {
 
 variable "cluster_name" {
   description = ""
-  type = string
+  type        = string
 }
 
 variable "project_id" {
