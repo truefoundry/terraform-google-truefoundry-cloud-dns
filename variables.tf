@@ -9,6 +9,11 @@ variable "dns_zone_name" {
   type        = string
 }
 
+variable "cluster_name" {
+  description = ""
+  type = string
+}
+
 variable "project_id" {
   description = "Project ID"
   type        = string
@@ -23,13 +28,13 @@ variable "dns_service_account_name" {
 variable "dns_role_id" {
   description = "Custom DNS role ID"
   type        = string
-  default     = "customDnsRole"
+  default     = ""
 }
 
 variable "dns_role_title" {
   description = "Custom DNS role title"
   type        = string
-  default     = "DNS Manager"
+  default     = "dns-manager"
 }
 
 variable "cert_manager_namespace" {
@@ -42,4 +47,28 @@ variable "cert_manager_service_account" {
   description = "Kubernetes service account name for cert-manager"
   type        = string
   default     = "cert-manager"
+}
+
+variable "truefoundry_dns_manger_role_name_override_enabled" {
+  description = "Enable override for TrueFoundry DNS Manager Role name"
+  type        = bool
+  default     = false
+}
+
+variable "truefoundry_dns_manger_role_override_name" {
+  description = "Override name for TrueFoundry DNS Manager Role"
+  type        = string
+  default     = ""
+}
+
+variable "truefoundry_dns_service_account_name_override" {
+  description = "Enable override for TrueFoundry DNS Service Account name"
+  type        = bool
+  default     = false
+}
+
+variable "truefoundry_dns_service_account_override_name" {
+  description = "Override name for TrueFoundry DNS Service Account"
+  type        = string
+  default     = ""
 }
