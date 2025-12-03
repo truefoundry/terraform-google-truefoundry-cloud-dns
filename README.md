@@ -44,7 +44,7 @@ No modules.
 | <a name="input_truefoundry_dns_manger_role_name_override_enabled"></a> [truefoundry\_dns\_manger\_role\_name\_override\_enabled](#input\_truefoundry\_dns\_manger\_role\_name\_override\_enabled) | Enable override for TrueFoundry DNS Manager Role name | `bool` | `false` | no |
 | <a name="input_truefoundry_dns_manger_role_override_name"></a> [truefoundry\_dns\_manger\_role\_override\_name](#input\_truefoundry\_dns\_manger\_role\_override\_name) | Override name for TrueFoundry DNS Manager Role | `string` | `""` | no |
 | <a name="input_truefoundry_dns_service_account_name_override_enabled"></a> [truefoundry\_dns\_service\_account\_name\_override\_enabled](#input\_truefoundry\_dns\_service\_account\_name\_override\_enabled) | Enable override for TrueFoundry DNS Service Account name | `bool` | `false` | no |
-| <a name="input_truefoundry_dns_service_account_override_name"></a> [truefoundry\_dns\_service\_account\_override\_name](#input\_truefoundry\_dns\_service\_account\_override\_name) | Override name for TrueFoundry DNS Service Account | `string` | `""` | no |
+| <a name="input_truefoundry_dns_service_account_override_name"></a> [truefoundry\_dns\_service\_account\_override\_name](#input\_truefoundry\_dns\_service\_account\_override\_name) | Override name for TrueFoundry DNS Service Account. | `string` | `""` | no |
 | <a name="input_use_existing_dns_zone"></a> [use\_existing\_dns\_zone](#input\_use\_existing\_dns\_zone) | Flag to create DNS zone | `bool` | `false` | no |
 
 ## Outputs
