@@ -28,7 +28,7 @@ variable "dns_service_account_name" {
 variable "dns_role_id" {
   description = "Custom DNS role ID"
   type        = string
-  default     = ""
+  default     = "tfyDNSManagerRole"
 }
 
 variable "dns_role_title" {
