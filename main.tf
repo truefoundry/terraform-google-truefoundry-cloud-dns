@@ -2,7 +2,7 @@ resource "google_dns_managed_zone" "truefoundry_dns_zone" {
   count       = var.use_existing_dns_zone ? 0 : 1
   name        = var.dns_zone_name
   dns_name    = var.dns_zone_name
-  description = "${var.cluster_name} DNS zone managed"
+  description = "Managed public DNS zone for the ${var.cluster_name} cluster, used for cert-manager and service domain records"
 }
 
 resource "google_project_iam_custom_role" "truefoundry_dns_manger_role" {
