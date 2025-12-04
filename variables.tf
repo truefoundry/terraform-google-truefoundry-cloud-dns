@@ -68,7 +68,7 @@ variable "truefoundry_dns_service_account_name_override_enabled" {
 }
 
 variable "truefoundry_dns_service_account_override_name" {
-  description = "Override name for TrueFoundry DNS Service Account"
+  description = "Override name for TrueFoundry DNS Service Account."
   type        = string
   default     = ""
 }
