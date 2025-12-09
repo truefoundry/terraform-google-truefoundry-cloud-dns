@@ -8,7 +8,7 @@ resource "google_dns_managed_zone" "truefoundry_dns_zone" {
 
 resource "google_project_iam_custom_role" "truefoundry_dns_manger_role" {
   project     = var.project_id
-  role_id     = var.dns_role_id
+  role_id     = var.truefoundry_dns_manger_role_id_override_enabled ? var.truefoundry_dns_manger_role_id_override_name : lower(replace("${var.cluster_name}${var.dns_role_id}", "/[^A-Za-z]/", ""))
   title       = var.truefoundry_dns_manger_role_name_override_enabled ? var.truefoundry_dns_manger_role_override_name : "${var.cluster_name}-${var.dns_role_title}"
   description = "${var.cluster_name} custom role for DNS management with cert-manager"
   permissions = [
