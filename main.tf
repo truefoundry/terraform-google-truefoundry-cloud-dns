@@ -1,7 +1,8 @@
 resource "google_dns_managed_zone" "truefoundry_dns_zone" {
   count       = var.use_existing_dns_zone ? 0 : 1
-  name        = var.dns_zone_name
+  name        = regex("^[^.]+", var.dns_zone_name)
   dns_name    = var.dns_zone_name
+  project     = var.project_id
   description = "Managed public DNS zone for the ${var.cluster_name} cluster, used for cert-manager and service domain records"
 }
 
@@ -25,7 +26,7 @@ resource "google_project_iam_custom_role" "truefoundry_dns_manger_role" {
 
 resource "google_service_account" "truefoundry_dns_service_account" {
   project      = var.project_id
-  account_id   = var.truefoundry_dns_service_account_name_override_enabled ? var.truefoundry_dns_service_account_override_name : "${var.cluster_name}-${var.dns_service_account_name}"
+  account_id   = substr(var.truefoundry_dns_service_account_name_override_enabled ? var.truefoundry_dns_service_account_override_name : "${var.cluster_name}-${var.dns_service_account_name}", 0, 30, )
   display_name = var.truefoundry_dns_service_account_name_override_enabled ? var.truefoundry_dns_service_account_override_name : "${var.cluster_name}-${var.dns_service_account_name}"
 }
 
