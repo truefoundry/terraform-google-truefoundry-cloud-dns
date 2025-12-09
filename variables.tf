@@ -4,8 +4,8 @@ variable "use_existing_dns_zone" {
   default     = false
 }
 
-variable "dns_zone_name" {
-  description = "DNS zone name"
+variable "dns_name" {
+  description = "DNS name. e.g - test.example.com."
   type        = string
 }
 
@@ -69,6 +69,18 @@ variable "truefoundry_dns_service_account_name_override_enabled" {
 
 variable "truefoundry_dns_service_account_override_name" {
   description = "Override name for TrueFoundry DNS Service Account"
+  type        = string
+  default     = ""
+}
+
+variable "truefoundry_dns_zone_name_override_enabled" {
+  description = "Enable override for TrueFoundry DNS Zone name"
+  type        = bool
+  default     = false
+}
+
+variable "truefoundry_dns_zone_override_name" {
+  description = "Override name for TrueFoundry DNS Zone"
   type        = string
   default     = ""
 }
