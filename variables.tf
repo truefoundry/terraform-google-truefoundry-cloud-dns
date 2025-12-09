@@ -28,7 +28,7 @@ variable "dns_service_account_name" {
 variable "dns_role_id" {
   description = "Custom DNS role ID"
   type        = string
-  default     = ""
+  default     = "tfyDNSManagerRole"
 }
 
 variable "dns_role_title" {
@@ -68,7 +68,19 @@ variable "truefoundry_dns_service_account_name_override_enabled" {
 }
 
 variable "truefoundry_dns_service_account_override_name" {
-  description = "Override name for TrueFoundry DNS Service Account"
+  description = "Override name for TrueFoundry DNS Service Account."
+  type        = string
+  default     = ""
+}
+
+variable "truefoundry_dns_manger_role_id_override_enabled" {
+  description = "Enable override for TrueFoundry DNS Manager Role ID"
+  type        = bool
+  default     = false
+}
+
+variable "truefoundry_dns_manger_role_id_override_name" {
+  description = "Override name for TrueFoundry DNS Manager Role ID"
   type        = string
   default     = ""
 }
