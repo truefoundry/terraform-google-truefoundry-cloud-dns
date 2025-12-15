@@ -84,15 +84,3 @@ variable "truefoundry_dns_manger_role_id_override_name" {
   type        = string
   default     = ""
 }
-
-variable "truefoundry_dns_zone_name_override_enabled" {
-  description = "Enable override for TrueFoundry DNS Zone name"
-  type        = bool
-  default     = false
-}
-
-variable "truefoundry_dns_zone_override_name" {
-  description = "Override name for TrueFoundry DNS Zone"
-  type        = string
-  default     = ""
-}
