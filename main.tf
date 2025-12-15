@@ -1,6 +1,6 @@
 resource "google_dns_managed_zone" "truefoundry_dns_zone" {
   count       = var.use_existing_dns_zone ? 0 : 1
-  name        = var.truefoundry_dns_zone_name_override_enabled ? var.truefoundry_dns_zone_override_name : split(".", var.dns_name)[0]
+  name        = var.zone_name
   dns_name    = var.dns_name
   project     = var.project_id
   description = "Managed public DNS zone for the ${var.cluster_name} cluster, used for cert-manager and service domain records"
