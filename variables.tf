@@ -4,6 +4,11 @@ variable "use_existing_dns_zone" {
   default     = false
 }
 
+variable "zone_name" {
+  description = "Zone name. e.g - tfy-dns"
+  type        = string
+}
+
 variable "dns_name" {
   description = "DNS name. e.g - test.example.com."
   type        = string
